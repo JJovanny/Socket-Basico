@@ -1,0 +1,23 @@
+- npm i socket.io : 
+- hay que configuar express : 
+* const app = express();
+  let server = http.createServer(app);
+
+* en vez de app.listen : server.listen
+
+- configurar el front 
+
+- io.on('connection', (client) ) : 
+ para saber cuando un usuario se conecta al servidor
+* client : tiene toda la info de la computadora o de la conexion establecida
+
+front
+- on : para escuchar
+- socket.on('connect') : para saber cuando se conecta al servidor
+- socket.on('disconnect') : para saber cuando se desconecta al servidor
+- socket.emit() : enviar informacion
+
+back
+- client.on('disconnect') : para saber cuando se ha desconectado un cliente
+- client.broadcast.emit('mensajeEnviar', data) : 
+* para enviar un mensaje a todos los sclientes conectados al servidor
